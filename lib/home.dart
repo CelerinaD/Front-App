@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int year = 0;
 
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: Colors.white70,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('User Profile'),
         backgroundColor: Colors.brown,
@@ -23,7 +30,8 @@ class Home extends StatelessWidget {
               children: <Widget>[
                 Center(
                   child: CircleAvatar(
-                    child: Image.asset('assets/6997662.png'),
+                   backgroundImage: AssetImage('assets/6997662.png'),
+                    backgroundColor: Colors.white,
                     radius: 80.0,
                   ),
                 ),
@@ -80,7 +88,7 @@ class Home extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  'Fourth Year',
+                  '$year Year',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
@@ -118,8 +126,19 @@ class Home extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 ElevatedButton(
-                    onPressed: (){},
-                    child: Text('Add Year'),
+                    onPressed: (){
+                      setState(() {
+                        year += 1;
+                      });
+                    },
+                    child: Text(
+                        'Add Year',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black87,
+                        fontSize: 20.0,
+                      ),
+                    ),
                   style: ButtonStyle(
                     backgroundColor: WidgetStateProperty.all(Colors.brown),
                   ),
