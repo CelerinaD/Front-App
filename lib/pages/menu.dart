@@ -17,36 +17,7 @@ class _MenuState extends State<Menu> {
     Product(productName: "Wintermelon", price: 49.99),
   ];
 
-  Widget cardTemplate(product){
-    return Card(
-      color: Colors.brown[500],
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Text(
-                product.productName,
-                style: TextStyle(
-                  fontSize: 22.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
 
-            ),
-            Text(
-                '${product.price}',
-              style: TextStyle(
-                fontSize: 17.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.grey[700],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
   @override
    Widget build(BuildContext context) {
     return Scaffold(
