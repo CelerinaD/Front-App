@@ -15,12 +15,20 @@ class _DashboardState extends State<Dashboard> {
       body: Container(
         child: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               ElevatedButton(
                 onPressed: (){
                   Navigator.pushNamed(context, '/menu');
                 },
-                  child: Text('Go to Menu'),
+                  child: Text(
+                      'Go to Menu',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
 
               ),
 
@@ -28,8 +36,14 @@ class _DashboardState extends State<Dashboard> {
                 onPressed: (){
                   Navigator.pushNamed(context, '/profile');
                 },
-                child: Text('Go to Profile'),
+                child: Text(
+                    'Go to Profile',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                ),
 
+              ),
               ),
             ],
           ),

@@ -102,7 +102,7 @@ class _LoginState extends State<Login> {
           Row(
             children: [
               Text(
-                  'Don`t Have an account?',
+                  'Don`t have an account?',
                 style: TextStyle(
                   color: Colors.black,
                 ),

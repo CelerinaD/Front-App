@@ -150,7 +150,7 @@ class _SignupState extends State<Signup> {
                         Text("Already have an account? "),
                         InkWell(
                           child: Text(
-                            'Sign Up Here',
+                            'Log In Here',
                             style: TextStyle(
                               color: Colors.orange,
                             ),
