@@ -19,12 +19,12 @@ class _LoginState extends State<Login> {
         backgroundColor: Colors.brown[100],
         body: SafeArea(
         child: Padding(
-        padding: EdgeInsets.fromLTRB(15.0, 50.0, 10.0, 0),
+        padding: EdgeInsets.fromLTRB(30.0, 60.0, 30.0, 0),
           child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              'Let`s Get Started!',
+              'Welcome!',
               style: TextStyle(
                 fontWeight: FontWeight.w700,
                 letterSpacing: 2.0,
@@ -32,6 +32,11 @@ class _LoginState extends State<Login> {
               ),
             ),
             SizedBox(height: 10.0,),
+            Form(
+              key: formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
             TextFormField(
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
@@ -93,10 +98,35 @@ class _LoginState extends State<Login> {
                 foregroundColor: Colors.black,
               ),
             ),
+          SizedBox(height: 30.0,),
+          Row(
+            children: [
+              Text(
+                  'Don`t Have an account?',
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ),
+              SizedBox(width: 5.0,),
+              InkWell(
+                child: Text(
+                  'Sign Up',
+                  style: TextStyle(
+
+                    color: Colors.orange[400],
+                  ),
+                ),
+                onTap: ()=> Navigator.popAndPushNamed(context, '/signup'),
+              )
+            ],
+          )
           ],
           ),
         ),
-          ),
+    ],
+     ),
+    ),
+        ),
     );
 
   }
