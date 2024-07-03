@@ -42,16 +42,17 @@ class _SignupState extends State<Signup> {
                     TextFormField(
                       maxLength: 40,
                       decoration: InputDecoration(
-                        label: Text('Name'),
+                        labelText: 'Name',
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20.0)),
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please provide a name';
                         }
-                        if (value.length < 2) {
-                          return 'Name should be atleast 3 letters long';
+                        if (value.length < 3) {
+                          return 'Name should be at least 3 letters long';
                         }
                         return null;
                       },
@@ -65,9 +66,10 @@ class _SignupState extends State<Signup> {
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
-                        label: Text('Email'),
+                        labelText: 'Email',
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20.0)),
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -85,19 +87,20 @@ class _SignupState extends State<Signup> {
                     TextFormField(
                       obscureText: true,
                       decoration: InputDecoration(
-                        label: Text('Password'),
+                        labelText: 'Password',
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20.0)),
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please provide a password';
                         }
                         if (value.length < 8) {
-                          return 'Password should be atleast 8 characters long';
+                          return 'Password should be at least 8 characters long';
                         }
                         if (value.length > 20) {
-                          return 'Password should be atleast 20 characters long';
+                          return 'Password should be at most 20 characters long';
                         }
                         return null;
                       },
@@ -115,6 +118,7 @@ class _SignupState extends State<Signup> {
                           print(name);
                           print(email);
                           print(password);
+                          // Implement signup logic here
                         }
                       },
                       child: Text('Sign Up'),
@@ -123,30 +127,43 @@ class _SignupState extends State<Signup> {
                         foregroundColor: Colors.black,
                       ),
                     ),
-                    Row(
-                      children: [
-                        Expanded(
-                            child: Divider(
-                          color: Colors.brown,
-                        )),
-                        SizedBox(
-                            width: 10,
-                            height: 90.0,
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: <Widget>[
+                        ElevatedButton.icon(
+                          onPressed: () {
+
+                          },
+                          icon: Icon(Icons.g_mobiledata_rounded),
+                          label: Text('Log in with Google'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blueGrey[900],
+                            foregroundColor: Colors.white,
+                          ),
                         ),
-                        Text("or"),
-                        SizedBox(width: 10),
-                        Expanded(child: Divider(
-                          color: Colors.brown,
-                        ))
+                        SizedBox(height: 10.0),
+                        ElevatedButton.icon(
+                          onPressed: () {
+
+                          },
+                          icon: Icon(Icons.facebook),
+                          label: Text('Log in with Facebook'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue[900],
+                            foregroundColor: Colors.white,
+                          ),
+                        ),
                       ],
                     ),
                     SizedBox(
-                      width: 30.0,
                       height: 10.0,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                      children: <Widget>[
                         Text("Already have an account? "),
                         InkWell(
                           child: Text(
@@ -159,7 +176,7 @@ class _SignupState extends State<Signup> {
                               Navigator.popAndPushNamed(context, '/login'),
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
