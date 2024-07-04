@@ -16,6 +16,7 @@ class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.brown[100],
       body: SafeArea(
         child: Padding(
@@ -138,7 +139,7 @@ class _SignupState extends State<Signup> {
 
                           },
                           icon: Icon(Icons.g_mobiledata_rounded),
-                          label: Text('Log in with Google'),
+                          label: Text('Sign Up with Google'),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blueGrey[900],
                             foregroundColor: Colors.white,
@@ -150,7 +151,7 @@ class _SignupState extends State<Signup> {
 
                           },
                           icon: Icon(Icons.facebook),
-                          label: Text('Log in with Facebook'),
+                          label: Text('Sign Up with Facebook'),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue[900],
                             foregroundColor: Colors.white,

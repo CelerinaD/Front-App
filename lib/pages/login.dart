@@ -89,6 +89,7 @@ class _LoginState extends State<Login> {
                   formKey.currentState!.save();
                   print(email);
                   print(password);
+                  Navigator.pushReplacementNamed(context, '/');
 
                 }
               },
