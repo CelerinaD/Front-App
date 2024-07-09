@@ -11,6 +11,8 @@ class _LoginState extends State<Login> {
   final formKey = GlobalKey<FormState>();
   String email = '';
   String password = '';
+  bool _obscure = true;
+  IconData _obscureIcon = Icons.visibility_off;
 
 
   @override
@@ -59,9 +61,22 @@ class _LoginState extends State<Login> {
             ),
             SizedBox(height: 30.0,),
             TextFormField(
-              obscureText: true,
+              obscureText: _obscure,
               decoration: InputDecoration(
                 label: Text('Password'),
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.visibility_off_outlined),
+                  onPressed: (){
+                    setState(() {
+                      _obscure=!_obscure;
+                      if(_obscure){
+                        _obscureIcon = Icons.visibility_off;
+                      }else{
+                        _obscureIcon = Icons.visibility_off;
+                      }
+                    });
+                  },
+                ),
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.0)
                 ),
