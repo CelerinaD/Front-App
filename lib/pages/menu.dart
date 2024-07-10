@@ -19,7 +19,7 @@ class _MenuState extends State<Menu> {
   late Future<List<dynamic>> products;
   Future <List<dynamic>> fetchData() async{
     final response = await http.get(
-        Uri.parse('http://10.0.2.2:8080/products')
+        Uri.parse('http://10.0.2.2:8080/api/v1/product/all')
     );
     final data = jsonDecode(response.body);
     List products = <Product>[];
@@ -41,6 +41,7 @@ class _MenuState extends State<Menu> {
   @override
    Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.brown[100],
       appBar: AppBar(
         backgroundColor: Colors.brown[600],
         foregroundColor: Colors.white,
@@ -77,7 +78,7 @@ class _MenuState extends State<Menu> {
                     itemCount: products.length,
                     itemBuilder: (context, index) {
                       return Card(
-                        color: Colors.brown[100],
+                        color: Colors.brown[300],
                         child: ListTile(
                           title: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
