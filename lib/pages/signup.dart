@@ -45,14 +45,27 @@ class _SignupState extends State<Signup> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(
-                'Let`s Get Started!',
-                style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: 2.0,
-                  fontSize: 25.5,
-                ),
+              Row(
+                children: [
+                  Text(
+                    'Let`s Get Started!',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 2.0,
+                      fontSize: 28.0,
+                    ),
+                  ),
+                  SizedBox(width: 30.0,),
+                  Center(
+                    child: CircleAvatar(
+                      backgroundImage: AssetImage('assets/llll.webp'),
+                      backgroundColor: Colors.white,
+                      radius: 40.0,
+                    ),
+                  ),
+                ],
               ),
+
               SizedBox(
                 height: 30.0,
               ),

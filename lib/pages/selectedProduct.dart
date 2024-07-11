@@ -37,6 +37,7 @@ class _SelectedProductState extends State<SelectedProduct> {
           children: [
             Column(
             children: [
+              Image.network(widget.product.url),
         Text(
             widget.product.productName,
           style: TextStyle(

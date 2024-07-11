@@ -59,7 +59,14 @@ class _LoginState extends State<Login> {
                 fontSize: 25.5,
               ),
             ),
-            SizedBox(height: 10.0,),
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/llll.webp'),
+                backgroundColor: Colors.brown,
+                radius: 60.0,
+              ),
+            ),
+            SizedBox(height: 20.0,),
             Form(
               key: formKey,
               child: Column(
@@ -150,7 +157,7 @@ class _LoginState extends State<Login> {
                         }
                     );
                   });
-                  Navigator.pushReplacementNamed(context, '/');
+                  Navigator.popAndPushNamed(context, '/');
                 }
               },
               child: buttonContent,
